@@ -1,0 +1,19 @@
+Cleaning Step,Rows/Cells Affected,Notes
+Starting row count,2079,Raw exported dataset
+Removed completely blank rows,13,Rows with every field empty
+Removed exact duplicate rows,15,Same transaction logged twice
+Standardized Bank name spelling/casing,543,"e.g. 'GT Bank', 'gtbank', 'GTB' -> 'GTBank'"
+Standardized Transaction_Type spelling/casing,464,"e.g. 'Withdawal', 'WITHDRAWAL' -> 'Withdrawal'"
+Standardized Sector spelling/casing,436,"e.g. 'Govt', 'GOVT' -> 'Government'"
+Standardized Date format to YYYY-MM-DD,71,"Fixed DD/MM/YYYY, MM-DD-YYYY, YYYY/MM/DD, 'Mon D, YYYY' formats"
+Removed rows with missing Customer_ID,109,No way to trace transaction to an account
+Recalculated Year/Month/Quarter from Date,37,Derived columns were out of sync with the Date field
+Standardized/derived Debit_Credit,6,Fixed 'DR'/'CR'/'D'/'C'/blank using Transaction_Type
+Corrected negative transaction amounts,34,Converted to positive (amounts cannot be negative)
+Flagged extreme outlier amounts (>= 100M NGN),24,"Kept for review, marked in Outlier_Flag column"
+Filled missing Interest_Rate_pct with column median,106,Median used: 15.14
+Filled missing Exchange_Rate_USD with column median,87,Median used: 1168.88
+Filled missing Account_Balance_NGN with column median,100,Median used: 1808278.16
+Filled missing Branch with 'Unknown',101,Branch not recorded at time of transaction
+Standardized NPL_Flag to Yes/No,176,"Mapped Y/N/1/0/True/False/blank, blanks defaulted to 'No'"
+Final clean row count,1942,Removed 137 rows total during cleaning
