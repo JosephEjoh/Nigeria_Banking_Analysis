@@ -1,6 +1,6 @@
 # 🏦 Nigeria Banking Transactions — Data Analysis Project
 
-![Dashboard Preview](images/dashboard_preview.png)
+![Dashboard Preview](Images/dashboard_preview.png)
 
 ## 📌 Project Overview
 
